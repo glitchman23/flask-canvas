@@ -11,7 +11,11 @@ app.config['SECRET_KEY'] = '92d55cfc39b5c5a115ff84baebd0b834'
 @app.route('/')
 @app.route('/home')
 def home():
-	return render_template('home.jinja2')
+	return render_template('home.html')
+
+@app.route('/about')
+def about():
+	return render_template('about.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -19,7 +23,7 @@ def register():
 	if form.validate_on_submit():
 		flash(f'Account created for {form.username.data}!', 'success')
 		return redirect(url_for('home'))
-	return render_template('register.jinja2', title='Register', form=form)
+	return render_template('register.html', title='Register', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -31,7 +35,7 @@ def login():
 		else:
 			flash(f'Login unsuccessful. Please check username and password', 'danger')
 
-	return render_template('login.jinja2', title='Login', form=form)
+	return render_template('login.html', title='Login', form=form)
 
 
 ##################################  API  ##################################

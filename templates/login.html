@@ -1,6 +1,6 @@
-{% extends "basic.jinja2" %}
+{% extends "basic.html" %}
 
-{% block body %}
+{% block content %}
     <div class="content-section mt-5">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
@@ -51,4 +51,4 @@
             Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign up now</a>
         </small>
     </div>
-{% endblock body %}
+{% endblock content %}
