@@ -27,14 +27,17 @@
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarColor01">
+          <!--- left side bar  -->
           <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('main.home') }}">Home</a>
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for('main.about') }}">About</a>
             </li>
+            </li>
           </ul>
-          <!--- Right side bar  -->
+          <!--- right side bar  -->
           <ul class="navbar-nav my-2 my-lg-0">
             {% if current_user.is_authenticated %}
               <li class="nav-item mr-sm-2">
